@@ -100,13 +100,14 @@
 <div class="container">
   <h2>Informe de Caja</h2>
   <?php
-  // Establecer la conexión a la base de datos
-  $conexion = new mysqli("localhost", "root", "", "envios");
+// Incluir la configuración de la base de datos
+require 'conexion.php';
 
-  // Verificar la conexión
-  if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-  }
+// Ahora puedes usar la variable $conexion para realizar consultas y operaciones en la base de datos
+// ...
+// ...
+// No olvides cerrar la conexión al finalizar
+
 
   // Obtener los datos del informe de caja para todos los días de la semana
   $sql = "SELECT id, DATE_FORMAT(fecha, '%d %M') AS fecha_formato, dinero_caja, deposito_manana, venta_total_sin_envio, venta_efectivo, venta_tarjeta, (venta_tarjeta - venta_tarjeta * 0.035) AS total_recibir_tarjeta, saldo_final, ubicacion_local, estado_revisado FROM resumen_caja ORDER BY fecha DESC";
