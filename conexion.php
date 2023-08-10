@@ -4,9 +4,10 @@ $local = ($_SERVER['SERVER_NAME'] === 'localhost');
 
 // Configuración de la base de datos para entorno local
     $servername = "localhost";
-    $username = "admi_ellass";
-    $password = "Daymel23";
+    $username = "root";
+    $password = "";
     $dbname = "admi_ellass";
+
 
 // Intentar conectar a la base de datos
 $conexion = new mysqli($servername, $username, $password, $dbname);
